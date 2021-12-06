@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.bareminds.TempleApp3.dto.AddDonations;
+
 @Entity
 @Table(name = "templeDB")
 public class Temple {
@@ -44,8 +46,8 @@ public class Temple {
 	@Column(name = "expences")
 	private double expences;
 	
-	@OneToMany(targetEntity = Donations.class,cascade = CascadeType.ALL)
-	@JoinColumn(name="TD_Fk", referencedColumnName = "id")
+	@OneToMany(mappedBy = "temple",cascade = CascadeType.ALL)
+
 	private List<Donations> donations;
 
 	public Temple() {
@@ -140,5 +142,12 @@ public class Temple {
 				+ ", expences=" + expences + ", donations=" + donations + "]";
 	}
 
+	public void addDonation(Donations donation)
+	{
+		donations.add(donation);
+	}
+
+
+	
 
 }

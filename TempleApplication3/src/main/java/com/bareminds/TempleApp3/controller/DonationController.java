@@ -1,5 +1,6 @@
 package com.bareminds.TempleApp3.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,19 @@ public class DonationController {
 		
 		
 	}
+	
+	@GetMapping("/donations/temple/{id}")
+	public List<Donations> findDonationByTemple(@PathVariable("id") Long id)
+	{
+		return donationService.findDonationByTemple(id);
+	}
+	
 
+	@PostMapping("/add/{id}")
+	public Donations addDonations(@PathVariable("id")long id,@RequestBody Donations donations)
+	{
+		return donationService.saveDonations(id, donations);
+	
+
+}
 }

@@ -37,8 +37,8 @@ public class Land {
 	public Land( String area, String address, String landtype) {
 		super();
 		
-		Area = area;
-		Address = address;
+		this.Area = area;
+		this.Address = address;
 		this.landtype = landtype;
 	}
 

@@ -29,6 +29,7 @@ public class AddDonations {
 	public AddDonations(Donations donation) {
 		super();
 		this.donation = donation;
+		
 	}
 
 	public Donations getDonation() {

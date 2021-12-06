@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -53,28 +54,39 @@ public class Donations {
 	@ManyToMany(targetEntity = Donar.class,cascade = CascadeType.ALL)
 	@JoinColumn(name="DonationId",referencedColumnName = "donaion_Id")
 	private List<Donar> donar;
+	
+	@ManyToOne
+	@JoinColumn(name="templeId")
+	private Temple temple;
 
 	public Donations() {
 		
 		// TODO Auto-generated constructor stub
 	}
 
-	public Donations(String liveStocks, String groceries, String foundations, Double cash,
-			String onlineDonations, String foodAndHeritage, List<Land> land, List<Donar> donar) {
+	public Donations(int donationId, String liveStocks, String groceries, String foundations, Double cash,
+			String onlineDonations, String foodAndHeritage, List<Land> land, List<Donar> donar, Temple temple) {
 		super();
-		
+		this.donationId = donationId;
 		this.liveStocks = liveStocks;
 		this.groceries = groceries;
-		this.Foundations = foundations;
+		Foundations = foundations;
 		this.cash = cash;
-		this.OnlineDonations = onlineDonations;
+		OnlineDonations = onlineDonations;
 		this.foodAndHeritage = foodAndHeritage;
 		this.land = land;
 		this.donar = donar;
+		this.temple = temple;
 	}
 
+	public int getDonationId() {
+		return donationId;
+	}
 
-	
+	public void setDonationId(int donationId) {
+		this.donationId = donationId;
+	}
+
 	public String getLiveStocks() {
 		return liveStocks;
 	}
@@ -139,6 +151,16 @@ public class Donations {
 		this.donar = donar;
 	}
 
+	public Temple getTemple() {
+		return temple;
+	}
+
+	public void setTemple(Temple temple) {
+		this.temple = temple;
+	}
+
+
+	
 	
 	
 	
