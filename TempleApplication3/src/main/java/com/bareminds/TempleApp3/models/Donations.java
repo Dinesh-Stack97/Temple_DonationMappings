@@ -36,11 +36,14 @@ public class Donations {
     
 	@Column(name="Foundations")
     private String Foundations;
+	
+	
   
     
 	@Column(name="Cash")
-    private Double cash;
-    
+	
+ private Double cash;
+	    
 	@Column(name="OnlineDonations")
     private String OnlineDonations;
     
@@ -48,15 +51,15 @@ public class Donations {
     private  String foodAndHeritage;
 	
 	@OneToMany(targetEntity = Land.class,cascade = CascadeType.ALL)
-	@JoinColumn(name ="donation_id", referencedColumnName = "donaion_Id")
+	@JoinColumn(name="Donation_Id", referencedColumnName = "donaion_Id")
 	private List<Land> land;
 	
 	@ManyToMany(targetEntity = Donar.class,cascade = CascadeType.ALL)
-	@JoinColumn(name="DonationId",referencedColumnName = "donaion_Id")
+	@JoinColumn(name="Donation_Id", referencedColumnName = "donaion_id")
 	private List<Donar> donar;
 	
 	@ManyToOne
-	@JoinColumn(name="templeId")
+	@JoinColumn(name="temple_id",referencedColumnName = "id")
 	private Temple temple;
 
 	public Donations() {

@@ -28,50 +28,51 @@ public class Land {
 	private String landtype;
 
 
+	@ManyToOne
+	
+	private Donations donation;
 	public Land() {
 		
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public Land( String area, String address, String landtype) {
+	public Land(int landId, String area, String address, String landtype, Donations donation) {
 		super();
-		
-		this.Area = area;
-		this.Address = address;
+		this.landId = landId;
+		Area = area;
+		Address = address;
 		this.landtype = landtype;
+		this.donation = donation;
 	}
-
-
-
-
+	public int getLandId() {
+		return landId;
+	}
+	public void setLandId(int landId) {
+		this.landId = landId;
+	}
 	public String getArea() {
 		return Area;
 	}
-
-
-	
-
-
+	public void setArea(String area) {
+		Area = area;
+	}
 	public String getAddress() {
 		return Address;
 	}
-
-
 	public void setAddress(String address) {
 		Address = address;
 	}
-
-
 	public String getLandtype() {
 		return landtype;
 	}
-
-
 	public void setLandtype(String landtype) {
 		this.landtype = landtype;
 	}
-
+	public Donations getDonation() {
+		return donation;
+	}
+	public void setDonation(Donations donation) {
+		this.donation = donation;
+	}
 
 	
 }
