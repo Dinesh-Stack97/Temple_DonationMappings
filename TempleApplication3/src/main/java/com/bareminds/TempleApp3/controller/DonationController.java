@@ -45,15 +45,15 @@ public class DonationController {
 		return donationService.getAllDonations();
 	}
 	
-	@PostMapping("/saveDonation/{id}")
-	public Donations SaveDonation(@PathVariable long id,@RequestBody Donations donation)
-	{
-		
-		
-		return donationService.saveDonations(id, donation);
-		
-		
-	}
+//	@PostMapping("/saveDonation/{id}")
+//	public Temple SaveDonation(@PathVariable long id,@RequestBody Donations donation)
+//	{
+//		
+//		
+//		return donationService.saveDonations(id, donation);
+//		
+//		
+//	}
 	
 	@GetMapping("/donations/temple/{id}")
 	public @ResponseBody List<Donations> findDonationByTemple(@PathVariable("id") Long id)
@@ -63,7 +63,7 @@ public class DonationController {
 	
 
 	@PostMapping("/add/{id}")
-	public Donations addDonations(@PathVariable("id")long id,@RequestBody Donations donations)
+	public Temple addDonations(@PathVariable("id")long id,@RequestBody Donations donations)
 	{
 		return donationService.saveDonations(id, donations);
 	

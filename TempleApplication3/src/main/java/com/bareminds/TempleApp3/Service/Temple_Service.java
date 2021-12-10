@@ -16,7 +16,7 @@ public interface Temple_Service {
 	Temple getTempleById(long id);
 	Temple updateTempleById(Temple temple, long id);
 	void deleteTempleById(long id);
-	List<Donations> getDonationByTemple(long id);
+	List<DonationReaquest> getDonationByTemple(long id);
     Temple getTempByid(long id);
     List<Temple> getTemplewithHall(int  no_of_Halls);
     List<String> getTempleInfobyNo_Of_Halls(int  no_of_Halls);

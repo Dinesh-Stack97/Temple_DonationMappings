@@ -74,7 +74,7 @@ public class TempleAppController {
 	}
 	
 	@GetMapping("getDonation/temple/{id}")
-	public @ResponseBody List<Donations> getDonationBytemple(@PathVariable("id") long id)
+	public @ResponseBody List<DonationReaquest> getDonationBytemple(@PathVariable("id") long id)
 	{
 		System.out.println("donations");
 		 return temple_Service.getDonationByTemple(id);

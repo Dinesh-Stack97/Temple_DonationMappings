@@ -46,7 +46,7 @@ public class Temple {
 	@Column(name = "expences")
 	private double expences;
 	
-	@OneToMany(targetEntity = Donations.class ,cascade = CascadeType.ALL)
+	@OneToMany(targetEntity = Donations.class ,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name="td_fk",referencedColumnName = "id")
 	private List<Donations> donations;
 
@@ -183,7 +183,15 @@ public class Temple {
 
 	public void addDonation(Donations donation)
 	{
+		
 		donations.add(donation);
+		donation.setTemple(this);
+	}
+	
+	public void deleteDonation(Donations donation)
+	{
+		donations.remove(donation);
+		donation.setTemple(null);
 	}
 
 

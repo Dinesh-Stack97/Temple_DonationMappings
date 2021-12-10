@@ -11,12 +11,13 @@ import org.springframework.data.jpa.repository.Query;
 import com.bareminds.TempleApp3.dto.AddDonations;
 import com.bareminds.TempleApp3.models.Donations;
 import com.bareminds.TempleApp3.models.Land;
+import com.bareminds.TempleApp3.models.Temple;
 public interface DonationService {
 	
 	List<Donations> getAllDonations();
 	//Donations SaveDonationById(long id,Donations donation);
 	//Donations SaveDonationById(long id, Donations donation);
-	Donations saveDonations(long id, Donations donation);
+	Temple saveDonations(long id, Donations donation);
 	
 	//void addDonationsbyId(int id);
 	List<Donations> findDonationByTemple(Long id);

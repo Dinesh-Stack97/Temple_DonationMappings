@@ -84,13 +84,13 @@ public class DonationServiceImpl  implements DonationService{
 
 
 	@Override
-	public Donations saveDonations(long id, Donations donation) {
+	public Temple saveDonations(long id, Donations donation) {
 		// TODO Auto-generated method stub
 		Temple temple = templeRepository.findById(id).orElseThrow(()-> new Spring_Boot_Apk_Exception("Temple", "id", id));
 		temple.addDonation(donation);
 		
 		
-		return  donationRepository.save(donation);
+		return  templeRepository.save(temple);
 	}
 
 

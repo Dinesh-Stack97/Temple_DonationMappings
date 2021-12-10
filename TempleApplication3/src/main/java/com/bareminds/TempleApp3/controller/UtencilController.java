@@ -17,11 +17,11 @@ public class UtencilController {
 	@Autowired
 	private UtensilsService utensilsService;
 	
-	@GetMapping("Temple/add/utencil/{utencil}")
-	public Utencils addNewUtencils(@RequestBody Utencils utensils,@PathVariable("utencil") long id)
-	{
-		return utensilsService.addNewUtencils(utensils, id);
-	}
+//	@GetMapping("Temple/add/utencil/{utencil}")
+//	public Utencils addNewUtencils(@RequestBody Utencils utensils,@PathVariable("utencil") long id)
+//	{
+//		return utensilsService.addNewUtencils(utensils, id);
+//	}
 	
 	@GetMapping("temple/viewUtencils/{id}")
 	public List<Utencils> getUtencilsBytemple(@PathVariable("id")long id)

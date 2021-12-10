@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.bareminds.TempleApp3.dto.DonationReaquest;
 import com.bareminds.TempleApp3.models.Donations;
 import com.bareminds.TempleApp3.models.Temple;
 import com.bareminds.TempleApp3.models.Utencils;
@@ -14,8 +15,8 @@ import com.bareminds.TempleApp3.models.Utencils;
 public interface TempleRepository  extends JpaRepository<Temple, Long>{
 
 	@Query("select temple.donations FROM Temple temple where temple.id=?1")
-	
-	List<Donations> findDonationsBytemple(Long id);
+	//@Query("select new com.bareminds.TempleApp3.dto.DonationReaquest(d)  from  Temple t where t JOIN t.donations d where t.id=?1")
+	List<DonationReaquest> findDonationsBytemple(Long id);
 	
 	@Query("select t From Temple t where t.id=?1")
 	Temple findTempleByID(long id);
@@ -35,7 +36,7 @@ public interface TempleRepository  extends JpaRepository<Temple, Long>{
 	List<Temple> findbytempleName(String templeName,Pageable pageable);
 
 	
-	
+	//@Query("select p from Temple t where t JOIN t.donation d")
 	
 	
 	

@@ -30,11 +30,11 @@ public class UtensilsServiceImpl implements UtensilsService{
 		return utensilsRepository.save(addUtensils.getUtensils());
 	}
 
-	@Override
-	public Utencils addNewUtencils(Utencils utensils, long id) {
-		// TODO Auto-generated method stub
-		return utensilsRepository.addNewUtencils(utensils, id);
-	}
+//	@Override
+//	public Utencils addNewUtencils(Utencils utensils, long id) {
+//		 TODO Auto-generated method stub
+//		return utensilsRepository.addNewUtencils(utensils, id);
+//	}
 
 	@Override
 	public List<Utencils> getUtencilsBytemple(long id) {

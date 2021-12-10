@@ -84,7 +84,7 @@ public class TempleServiceImpl implements Temple_Service{
 
 
 	@Override
-	public List<Donations> getDonationByTemple(long id) {
+	public List<DonationReaquest> getDonationByTemple(long id) {
 		// TODO Auto-generated method stub
 		templeRepository.findById(id).orElseThrow(()-> new Spring_Boot_Apk_Exception("Temple", "id", id));
 	    return templeRepository.findDonationsBytemple(id);
